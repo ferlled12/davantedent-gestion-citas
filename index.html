@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DavanteDent - Gestión de citas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1>🦷 DavanteDent</h1>
+        </div>
+        <h2>Gestión local de citas</h2>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h3>Añadir / Modificar cita</h3>
+            <form id="form-cita" novalidate>
+                <!-- Identificador oculto para modificaciones -->
+                <input type="hidden" id="id-cita">
+
+                <fieldset>
+                    <legend>Datos de la cita</legend>
+                    <div class="input-group">
+                        <label for="fecha-cita">Fecha de la cita:</label>
+                        <input type="date" id="fecha-cita" required>
+                        <span class="error-message" id="error-fecha-cita"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="hora-cita">Hora de la cita:</label>
+                        <input type="time" id="hora-cita" required>
+                        <span class="error-message" id="error-hora-cita"></span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Datos del paciente</legend>
+                    <div class="input-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" required>
+                        <span class="error-message" id="error-nombre"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" id="apellidos" required>
+                        <span class="error-message" id="error-apellidos"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="dni">DNI:</label>
+                        <input type="text" id="dni" placeholder="12345678A" required>
+                        <span class="error-message" id="error-dni"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" placeholder="Ej: 600123456" required>
+                        <span class="error-message" id="error-telefono"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="fecha-nac">Fecha de nacimiento:</label>
+                        <input type="date" id="fecha-nac" required>
+                        <span class="error-message" id="error-fecha-nac"></span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Otros detalles</legend>
+                    <div class="input-group">
+                        <label for="observaciones">Observaciones:</label>
+                        <textarea id="observaciones" rows="3"></textarea>
+                    </div>
+                </fieldset>
+
+                <button type="submit" id="btn-guardar">Guardar cita</button>
+                <button type="button" id="btn-cancelar" class="hidden">Cancelar edición</button>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <h3>Próximas citas</h3>
+            <table id="tabla-citas">
+                <thead>
+                    <tr>
+                        <th>Nº</th>
+                        <th>Fecha y hora</th>
+                        <th>Paciente</th>
+                        <th>DNI</th>
+                        <th>Teléfono</th>
+                        <th>Nacimiento</th>
+                        <th>Observaciones</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-citas">
+                    <!-- Las filas se generarán por JS -->
+                    <tr id="fila-vacia">
+                        <td colspan="8">No hay datos</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>Clínica DavanteDent - Málaga</p>
+        <p>Contacto: info.malaga@davantedent.es | Tel: 952 10 11 22</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
