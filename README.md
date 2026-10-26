@@ -1,4 +1,4 @@
-# 🦷 DavanteDent - Gestión Local de Citas
+# 🦷 DavanteDent - Gestión local de citas
 
 Proyecto académico para el módulo **Desarrollo Web en Entorno Cliente** (Grado Superior en Desarrollo de Aplicaciones Web). 
 
